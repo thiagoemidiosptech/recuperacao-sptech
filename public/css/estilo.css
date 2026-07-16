@@ -369,6 +369,7 @@ body {
 
 .div-results {
   width: 100%;
+  padding: 50px;
 }
 
 .div-results .feed-container {
@@ -545,6 +546,9 @@ body {
   width: 70%;
   margin: auto;
   padding-top: 10px;
+  background-color: white; 
+  padding: 20px; 
+  border-radius: 8px;
 }
 
 .tituloGraficos {
@@ -710,3 +714,61 @@ canvas {
   margin-bottom: 100px;
   cursor: pointer;
 }
+
+.kpis-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.kpi-card {
+  background-color: #212124;
+  border-radius: 5px;
+  padding: 20px;
+  flex: 1;
+  border-bottom: 3px solid #e6005a;
+  box-sizing: border-box;
+}
+
+.kpi-title {
+  color: #ffffff;
+  font-size: 20px;
+  margin: 0 0 15px 0;
+  border-bottom: 1px solid #e6005a;
+  padding-bottom: 5px;
+  font-weight: 500;
+}
+
+.kpi-value {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.kpi-list {
+  padding-left: 20px;
+  margin: 0;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.kpis {
+  background-color: white;
+  border-radius: 15px;
+  color: #1a1a1a;
+  width: 70%;
+  margin: 25px auto;
+  padding: 25px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
+

@@ -14,6 +14,34 @@ function listar(req, res) {
     });
 }
 
+function qtdLivrosCategoria(req, res) {
+    livrosModel.qtdLivrosCategoria().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function generoMaiorQtd(req, res) {
+    livrosModel.generoMaiorQtd().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
 
 
 function cadastrar(req, res) {
@@ -92,9 +120,27 @@ function deletar(req, res) {
         );
 }
 
+function autoresMaisCaros(req, res) {
+    livrosModel.autoresMaisCaros().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+
 module.exports = {
     listar,
     cadastrar,
     editar,
-    deletar
+    deletar,
+    qtdLivrosCategoria,
+    generoMaiorQtd,
+    autoresMaisCaros
 }
