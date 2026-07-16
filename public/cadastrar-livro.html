@@ -115,6 +115,12 @@
                                 <input name="precoVenda" id="precoVenda" maxlength="20" type="Text"></input>
                             </label>
 
+                            <label>
+                                Insira a quantidade:
+                                <br>
+                                <input name="quantidade" id="quantidade" type="number"></input>
+                            </label>
+
 
                             <button>Cadastrar</button>
                         </form>
@@ -144,8 +150,9 @@
 
         var precoCompra = Number(form_postagem.precoCompra.value);
         var precoVenda = Number(form_postagem.precoVenda.value);
+        var quantidade = Number(form_postagem.quantidade.value)
 
-        var generoInserido = fkGenero_lista.selectedOptions[0].text.toLowerCase().value;
+        var generoInserido = fkGenero_lista.selectedOptions[0].text.toLowerCase();
 
         if (precoCompra >= 100 && (generoInserido == "horror" || generoInserido == "romance") ) {
                precoVenda = precoCompra + (precoCompra * 0.225);
@@ -164,7 +171,8 @@
             fkGenero: form_postagem.fkGenero_lista.value,
             fkAutor: form_postagem.fkAutor_lista.value,
             precoCompra: precoCompra,
-            precoVenda: precoVenda
+            precoVenda: precoVenda,
+            quantidade: quantidade
         }
 
         fetch(`/livros/cadastrar`, {
